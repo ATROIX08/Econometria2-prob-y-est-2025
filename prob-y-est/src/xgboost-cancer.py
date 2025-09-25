@@ -157,8 +157,11 @@ for i in indices_arboles:
         ax.set_title(titulo, fontsize=20)
         
         # Guardamos la figura en un archivo PNG de alta calidad (300 DPI)
-        # El archivo se guardará en la misma carpeta que tu script de Python
-        nombre_archivo = f"arbol_xgboost_{i+1}.png"
+        # El archivo se guardará en la carpeta 'images' que está al mismo nivel que 'src'.
+        import os
+        output_dir = "../images"
+        os.makedirs(output_dir, exist_ok=True)
+        nombre_archivo = os.path.join(output_dir, f"arbol_xgboost_{i+1}.png")
         print(f"Guardando el gráfico del árbol {i+1} en '{nombre_archivo}'...")
         plt.savefig(nombre_archivo, dpi=500, bbox_inches='tight')
         
