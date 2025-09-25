@@ -4,17 +4,47 @@ Esta carpeta contiene scripts y proyectos relacionados con la materia de Econome
 
 ## Contenido
 
-### `red-neuronal-mtcars.py`
+### 1. Red Neuronal para Clasificación de Cilindros (`red-neuronal-mtcars.py`)
 
-Este script implementa un **Perceptrón Multicapa (MLP)**, un tipo de red neuronal, para resolver un problema de clasificación.
+Este script implementa un **Perceptrón Multicapa (MLP)** para clasificar el número de cilindros (`cyl`) de los automóviles del dataset `mtcars`.
 
-- **Objetivo**: Clasificar el número de cilindros (`cyl`) de los automóviles del famoso dataset `mtcars`.
-- **Librerías**: Utiliza `scikit-learn` para el modelo, `pandas` para la manipulación de datos y `matplotlib`/`seaborn` para las visualizaciones.
+- **Objetivo**: Aprender a construir, entrenar y evaluar una red neuronal para un problema de clasificación multiclase.
+- **Librerías**: `scikit-learn`, `pandas`, `matplotlib`, `seaborn`.
+- **Conceptos clave**:
+    - Preprocesamiento de datos (escalado).
+    - Pipelines en `scikit-learn` para evitar fuga de información.
+    - Arquitectura de un MLP (capas, neuronas, funciones de activación).
+    - Evaluación de modelos de clasificación (matriz de confusión, curva de pérdida, etc.).
 
-El código está extensamente comentado para servir como una guía de aprendizaje sobre los siguientes temas:
-- La importancia de escalar los datos de entrada.
-- Cómo dividir los datos en conjuntos de entrenamiento y prueba sin "fuga de información" (`data leakage`).
-- El uso de `Pipeline` en `scikit-learn` para encapsular el preprocesamiento y el modelo.
-- Los conceptos básicos de un MLP: capas, neuronas y funciones de activación.
-- El significado de los hiperparámetros clave del modelo.
-- Cómo evaluar el rendimiento del clasificador a través de métricas como *accuracy*, la matriz de confusión y la curva de pérdida.
+### 2. XGBoost para Clasificación de Cilindros (`xgboost-mtcars.py`)
+
+Este script utiliza **XGBoost**, un potente algoritmo de gradient boosting, para el mismo problema de clasificación de cilindros en el dataset `mtcars`.
+
+- **Objetivo**: Implementar un modelo de XGBoost y visualizar los árboles de decisión que lo componen.
+- **Librerías**: `xgboost`, `pandas`, `matplotlib`, `seaborn`.
+- **Conceptos clave**:
+    - Preparación de datos para XGBoost (`DMatrix`).
+    - Entrenamiento de un modelo de XGBoost.
+    - Visualización de los árboles de decisión para interpretar el modelo.
+
+## Cómo Ejecutar los Scripts
+
+1. Asegúrate de tener instaladas las librerías del `requirements.txt` del repositorio principal.
+2. Navega a la carpeta `src` de esta materia:
+   ```bash
+   cd econometria-2/src
+   ```
+3. Ejecuta el script que desees:
+   ```bash
+   python red-neuronal-mtcars.py
+   ```
+   o
+   ```bash
+   python xgboost-mtcars.py
+   ```
+
+## Visualizaciones Generadas
+
+El script `xgboost-mtcars.py` genera visualizaciones de los árboles de decisión. Aquí tienes una muestra:
+
+![Árbol de XGBoost](images/arbol_xgboost_mtcars_1.png)

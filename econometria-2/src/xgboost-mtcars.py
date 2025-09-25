@@ -183,7 +183,11 @@ for i in indices_arboles:
         
         # Guardamos la figura en un archivo PNG de alta calidad (300 DPI).
         # Esto permite hacer zoom para ver los detalles de las divisiones en cada nodo.
-        nombre_archivo = f"arbol_xgboost_mtcars_{i+1}.png"
+        # La imagen se guardará en la carpeta 'images' que está al mismo nivel que 'src'.
+        import os
+        output_dir = "../images"
+        os.makedirs(output_dir, exist_ok=True)
+        nombre_archivo = os.path.join(output_dir, f"arbol_xgboost_mtcars_{i+1}.png")
         print(f"Guardando el gráfico del árbol {i+1} en '{nombre_archivo}'...")
         plt.savefig(nombre_archivo, dpi=300, bbox_inches='tight')
         
