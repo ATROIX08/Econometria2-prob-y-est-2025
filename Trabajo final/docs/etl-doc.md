@@ -1,7 +1,3 @@
-¡Excelente! Aquí tienes una documentación exhaustiva en formato Markdown, diseñada para un `README.md` en GitHub. Sigue todas las directrices solicitadas: es extensa, se centra en la ingeniería de características, documenta el código y el output, y utiliza un lenguaje formal en tercera persona con verbos en infinitivo.
-
----
-
 # Documentación del Proceso ETL para `diamonds.csv`
 
 ## 1. Resumen del Proceso
