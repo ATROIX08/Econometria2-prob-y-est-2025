@@ -1,0 +1,246 @@
+------------------------------------------------------------------------------------------------------------------------
+                                      EDA ROBUSTO PARA DIAMONDS - 20251012_163209                                       
+------------------------------------------------------------------------------------------------------------------------
+Script: eda_diamonds.py
+Input Parquet: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\output\parquets\diamonds_features_20251012_155956.parquet
+Plots dir: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\plots
+Logs dir: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\output\logs
+
+------------------------------------------------------------------------------------------------------------------------
+                                                Diccionario de Variables                                                
+------------------------------------------------------------------------------------------------------------------------
+Variable                 Tipo           Descripción
+------------------------------------------------------------------------------------------------------------------------
+index                    Numérica       Índice o identificador de fila original.
+carat                    Numérica       Peso del diamante en quilates.
+cut                      Categórica     Calidad de corte (Fair < Good < Very Good < Premium < Ideal).
+color                    Categórica     Color (J peor → D mejor).
+clarity                  Categórica     Claridad (I1, SI2, SI1, VS2, VS1, VVS2, VVS1, IF).
+depth                    Numérica       Porcentaje de profundidad total.
+table                    Numérica       Ancho de la mesa (parte superior) en %.
+price                    Numérica       Precio en dólares.
+x                        Numérica       Longitud (mm).
+y                        Numérica       Ancho (mm).
+z                        Numérica       Profundidad (mm).
+fe_cut_ord               Numérica       Codificación ordinal del corte.
+fe_color_ord             Numérica       Codificación ordinal del color.
+fe_clarity_ord           Numérica       Codificación ordinal de la claridad.
+fe_volume_mm3            Numérica       Volumen aproximado (x*y*z).
+fe_area_mm2              Numérica       Área aproximada de la cara superior (x*y).
+fe_spread_mm             Numérica       Promedio de x e y; 'spread' visible.
+fe_aspect_ratio          Numérica       Relación x/y; ~1 indica forma cercana a circular.
+fe_invalid_dims          Booleana       Banderín si alguna dimensión x,y,z ≤ 0.
+fe_symmetry_dev_pct      Desconocido    Descripción no disponible (columna no documentada explícitamente).
+fe_depth_pct_recalc      Numérica       Profundidad recalculada: 100*z/((x+y)/2).
+fe_depth_pct_diff        Numérica       Diferencia depth vs depth recalculado.
+fe_depth_pct_is_consistentBooleana       Consistencia entre depth y el recalculado.
+fe_z_to_spread_ratio     Desconocido    Descripción no disponible (columna no documentada explícitamente).
+fe_price_per_carat       Numérica       Precio normalizado por quilate.
+fe_log_price             Numérica       Logaritmo del precio.
+fe_log_carat             Numérica       Logaritmo de carat.
+fe_log_price_per_carat   Numérica       Logaritmo del precio por quilate.
+fe_depth_dev             Numérica       Desviación de depth respecto a ~61.5%.
+fe_table_dev             Numérica       Desviación de table respecto a ~57%.
+fe_table_to_depth_ratio  Numérica       Relación table/depth.
+fe_spread_per_carat      Desconocido    Descripción no disponible (columna no documentada explícitamente).
+fe_area_per_carat        Desconocido    Descripción no disponible (columna no documentada explícitamente).
+fe_quality_score         Numérica       Índice sintético de calidad ponderado.
+fe_carat_bin             Categórica     Rangos discretos de carat.
+fe_carat_x_quality       Numérica       Interacción carat * quality_score.
+fe_ppc_z_by_cqc          Numérica       Z-score de PPC por (cut,color,clarity).
+fe_is_square             Desconocido    Descripción no disponible (columna no documentada explícitamente).
+
+------------------------------------------------------------------------------------------------------------------------
+                                               KPIs Globales del Dataset                                                
+------------------------------------------------------------------------------------------------------------------------
+KPI                           Valor
+------------------------------------------------------------------------------------------------------------------------
+Registros                     53,940
+Columnas                      38
+Duplicados (filas)            0
+Nulos totales                 5
+Memoria aprox.                25.00 MiB
+
+------------------------------------------------------------------------------------------------------------------------
+                                                  Resumen por Columna                                                   
+------------------------------------------------------------------------------------------------------------------------
+Columna                  Tipo           Nulos    Únicos  Top-1                       Top-2                       Top-3                       
+------------------------------------------------------------------------------------------------------------------------
+index                    Numérica           0     53940  1 (0.00%)                   35978 (0.00%)               35954 (0.00%)               
+carat                    Numérica           0       273  0.3 (4.83%)                 0.31 (4.17%)                1.01 (4.16%)                
+cut                      Categórica         0         5  Ideal (39.95%)              Premium (25.57%)            Very Good (22.40%)          
+color                    Categórica         0         7  G (20.93%)                  E (18.16%)                  F (17.69%)                  
+clarity                  Categórica         0         8  SI1 (24.22%)                VS2 (22.73%)                SI2 (17.04%)                
+depth                    Numérica           0       184  62.0 (4.15%)                61.9 (4.01%)                61.8 (3.85%)                
+table                    Numérica           0       127  56.0 (18.32%)               57.0 (18.03%)               58.0 (15.52%)               
+price                    Numérica           0     11602  605 (0.24%)                 802 (0.24%)                 625 (0.23%)                 
+x                        Numérica           0       554  4.37 (0.83%)                4.34 (0.81%)                4.33 (0.80%)                
+y                        Numérica           0       552  4.34 (0.81%)                4.37 (0.81%)                4.35 (0.79%)                
+z                        Numérica           0       375  2.7 (1.42%)                 2.69 (1.39%)                2.71 (1.37%)                
+fe_cut_ord               Numérica           0         5  5 (39.95%)                  4 (25.57%)                  3 (22.40%)                  
+fe_color_ord             Numérica           0         7  4 (20.93%)                  6 (18.16%)                  5 (17.69%)                  
+fe_clarity_ord           Numérica           0         8  3 (24.22%)                  4 (22.73%)                  2 (17.04%)                  
+fe_volume_mm3            Numérica           0     28465  50.5504799999999 (0.06%)    49.252956 (0.05%)           49.8283409999999 (0.05%)    
+fe_area_mm2              Numérica           0      5200  18.7919999999999 (0.32%)    18.7053999999999 (0.29%)    18.4468 (0.29%)             
+fe_spread_mm             Numérica           0      1426  4.35 (0.46%)                4.335 (0.44%)               4.31000000000000 (0.42%)    
+fe_aspect_ratio          Numérica           0      8583  0.99310344827563 (0.21%)    0.99318181818159 (0.19%)    0.99303944315522 (0.18%)    
+fe_invalid_dims          Numérica           0         2  False (99.96%)              True (0.04%)                                            
+fe_symmetry_dev_pct      Numérica           0      5193  0.00692041522491 (0.32%)    0.00693641618496 (0.29%)    0.00698486612339 (0.29%)    
+fe_depth_pct_recalc      Numérica           0     19725  61.8055555555412 (0.08%)    62.0530565167100 (0.07%)    61.7511520737184 (0.06%)    
+fe_depth_pct_diff        Numérica           0     21964  0.00555555554124 (0.08%)    -0.0469434832899 (0.06%)    0.00815402037109 (0.06%)    
+fe_depth_pct_is_consistentNumérica           0         2  True (99.68%)               False (0.32%)                                           
+fe_z_to_spread_ratio     Numérica           0     19460  0.61805555555541 (0.08%)    0.62053056516710 (0.07%)    0.62108922363832 (0.06%)    
+fe_price_per_carat       Numérica           0     28988  2586.66666665804 (0.22%)    2016.66666665994 (0.22%)    2587.09677418520 (0.21%)    
+fe_log_price             Numérica           0     11602  6.40522845803084 (0.24%)    6.68710860786651 (0.24%)    6.43775164973640 (0.23%)    
+fe_log_carat             Numérica           0       273  -1.2039728043259 (4.83%)    -1.1711829815029 (4.17%)    0.00995033085316 (4.16%)    
+fe_log_price_per_carat   Numérica           0     26318  7.71868549519846 (0.61%)    7.49554194388425 (0.40%)    8.34283980427146 (0.30%)    
+fe_depth_dev             Numérica           0       184  0.5 (4.15%)                 0.39999999999999 (4.01%)    0.29999999999999 (3.85%)    
+fe_table_dev             Numérica           0       127  -1.0 (18.32%)               0.0 (18.03%)                1.0 (15.52%)                
+fe_table_to_depth_ratio  Numérica           0      2155  0.90614886731390 (0.93%)    0.90909090909089 (0.92%)    0.90322580645159 (0.91%)    
+fe_spread_per_carat      Numérica           0      9803  14.3166666666189 (0.29%)    14.3499999999521 (0.29%)    14.3666666666187 (0.28%)    
+fe_area_per_carat        Numérica           0     17644  61.4893333331283 (0.24%)    61.7759999997940 (0.20%)    60.9124999998096 (0.16%)    
+fe_quality_score         Numérica           0        79  4.2 (4.68%)                 4.0 (4.34%)                 4.4 (4.31%)                 
+fe_carat_bin             Categórica         0         5  <0.5 (32.77%)               0.5–1.0 (31.90%)            1.0–1.5 (23.78%)            
+fe_carat_x_quality       Numérica           0      4838  1.44 (0.36%)                1.68 (0.34%)                1.32 (0.32%)                
+fe_ppc_z_by_cqc          Numérica           5     39752  -0.3796223703524 (0.08%)    -0.3115687973085 (0.08%)    -0.7446370077836 (0.08%)    
+fe_is_square             Numérica           0         2  True (71.38%)               False (28.62%)                                          
+
+------------------------------------------------------------------------------------------------------------------------
+                                          Estadísticos de Variables Numéricas                                           
+------------------------------------------------------------------------------------------------------------------------
+Columna                        min         p25         p50         p75         max          mean           std
+------------------------------------------------------------------------------------------------------------------------
+index                         1.00   13,485.75   26,970.50   40,455.25   53,940.00     26,970.50     15,571.28
+carat                         0.20        0.40        0.70        1.04        5.01          0.80          0.47
+depth                        43.00       61.00       61.80       62.50       79.00         61.75          1.43
+table                        43.00       56.00       57.00       59.00       95.00         57.46          2.23
+price                       326.00      950.00    2,401.00    5,324.25   18,823.00      3,932.80      3,989.44
+x                             0.00        4.71        5.70        6.54       10.74          5.73          1.12
+y                             0.00        4.72        5.71        6.54       58.90          5.73          1.14
+z                             0.00        2.91        3.53        4.04       31.80          3.54          0.71
+fe_cut_ord                    1.00        3.00        4.00        5.00        5.00          3.90          1.12
+fe_color_ord                  1.00        3.00        4.00        6.00        7.00          4.41          1.70
+fe_clarity_ord                1.00        3.00        4.00        5.00        8.00          4.05          1.65
+fe_volume_mm3                 0.00       65.14      114.81      170.84    3,840.60        129.85         78.25
+fe_area_mm2                   0.00       22.28       32.55       42.71      476.50         34.11         13.50
+fe_spread_mm                  0.00        4.72        5.71        6.54       33.49          5.73          1.12
+fe_aspect_ratio               0.00        0.99        1.00        1.01        1.62          1.00          0.02
+fe_symmetry_dev_pct           0.00        0.01        0.01        0.01        2.00          0.01          0.01
+fe_depth_pct_recalc           0.00       61.04       61.84       62.53      619.28         61.74          3.07
+fe_depth_pct_diff           -64.10       -0.03       -0.00        0.03      557.48         -0.01          2.72
+fe_z_to_spread_ratio          0.00        0.61        0.62        0.63        6.19          0.62          0.03
+fe_price_per_carat        1,051.16    2,477.94    3,495.20    4,949.60   17,828.85      4,008.39      2,012.67
+fe_log_price                  5.79        6.86        7.78        8.58        9.84          7.79          1.01
+fe_log_carat                 -1.61       -0.92       -0.36        0.04        1.61         -0.39          0.58
+fe_log_price_per_carat        6.96        7.82        8.16        8.51        9.79          8.18          0.47
+fe_depth_dev                -18.50       -0.50        0.30        1.00       17.50          0.25          1.43
+fe_table_dev                -14.00       -1.00        0.00        2.00       38.00          0.46          2.23
+fe_table_to_depth_ratio        0.68        0.90        0.92        0.96        1.62          0.93          0.05
+fe_spread_per_carat           0.00        6.21        8.09       11.89       36.23          9.00          3.43
+fe_area_per_carat             0.00       40.11       46.41       56.47      321.12         47.95          9.66
+fe_quality_score              1.00        3.50        4.10        4.70        6.20          4.08          0.87
+fe_carat_x_quality            0.48        1.71        2.70        4.08       13.20          3.10          1.70
+fe_ppc_z_by_cqc              -2.55       -0.75       -0.24        0.56        5.17         -0.00          1.00
+
+------------------------------------------------------------------------------------------------------------------------
+                                               Calidad de Datos (Resumen)                                               
+------------------------------------------------------------------------------------------------------------------------
+Chequeo                            Detalle/Conteo
+------------------------------------------------------------------------------------------------------------------------
+cut_invalid_values                 OK
+color_invalid_values               OK
+clarity_invalid_values             OK
+price_out_of_range                 0
+carat_out_of_range                 0
+x_nonpositive                      8
+y_nonpositive                      7
+z_nonpositive                      20
+depth_suspect                      45
+table_suspect                      12
+fe_invalid_dims_true               20
+
+------------------------------------------------------------------------------------------------------------------------
+                                         Insights Automáticos (Hallazgos Clave)                                         
+------------------------------------------------------------------------------------------------------------------------
+- price: Distribución sesgada a la derecha (skew=1.62). Considerar log.
+- carat: Distribución sesgada a la derecha (skew=1.12). Considerar log.
+- fe_price_per_carat: Distribución sesgada a la derecha (skew=1.23). Considerar log.
+- x: Sesgo moderado (skew=0.38).
+- y: Distribución sesgada a la derecha (skew=2.43). Considerar log.
+- z: Distribución sesgada a la derecha (skew=1.52). Considerar log.
+- depth: Sesgo moderado (skew=-0.08).
+- table: Sesgo moderado (skew=0.80).
+- Relaciones lineales aproximadas (correlaciones):
+  • price ~ carat: correlación=0.922 (n=53940).
+  • fe_price_per_carat ~ fe_quality_score: correlación=0.013 (n=53940).
+  • fe_price_per_carat ~ carat: correlación=0.770 (n=53940).
+
+------------------------------------------------------------------------------------------------------------------------
+                                         Diagnóstico de Multicolinealidad (VIF)                                         
+------------------------------------------------------------------------------------------------------------------------
+Variable                        VIF
+------------------------------------------------------------------------------------------------------------------------
+price                        81.009
+carat                       103.969
+fe_price_per_carat           78.722
+fe_quality_score              2.513
+fe_log_price                    inf
+fe_log_carat                    inf
+fe_log_price_per_carat          inf
+x                           163.994
+y                            20.596
+z                            23.596
+depth                         2.034
+table                         1.422
+
+------------------------------------------------------------------------------------------------------------------------
+                            Diamantes con Precio por Quilate Atípico (Z-score por categoría)                            
+------------------------------------------------------------------------------------------------------------------------
+Top sobreprecio relativo (Z-score alto):
+----------------------------------------
+index        | price        | carat        | cut          | color        | clarity      | fe_price_per_carat | fe_ppc_z_by_cqc
+------------------------------------------------------------------------------------------------------------------------------
+27689        | 18729        | 1.51         | Ideal        | E            | VS1          | 12403.311258 | 5.1651363837
+27548        | 18318        | 1.61         | Ideal        | D            | VS2          | 11377.639751 | 5.0706952055
+24463        | 12725        | 1.5          | Ideal        | I            | IF           | 8483.3333333 | 5.0045553034
+27091        | 17223        | 1.53         | Ideal        | D            | VS2          | 11256.862745 | 4.9927411121
+27174        | 17441        | 1.55         | Ideal        | D            | VS2          | 11252.258064 | 4.9897690753
+24158        | 12336        | 1.51         | Premium      | H            | VVS1         | 8169.5364238 | 4.9392320032
+27215        | 17548        | 1.57         | Ideal        | E            | VS2          | 11177.070063 | 4.8967415467
+24079        | 12224        | 1.51         | Premium      | H            | VVS1         | 8095.3642384 | 4.8690499175
+26586        | 16300        | 1.6          | Ideal        | H            | IF           | 10187.499999 | 4.8281050585
+27248        | 17649        | 1.51         | Ideal        | E            | VS1          | 11688.079470 | 4.7479991154
+
+Top descuento relativo (Z-score bajo):
+--------------------------------------
+index        | price        | carat        | cut          | color        | clarity      | fe_price_per_carat | fe_ppc_z_by_cqc
+------------------------------------------------------------------------------------------------------------------------------
+40600        | 497          | 0.38         | Ideal        | F            | I1           | 1307.8947368 | -2.546617092
+5            | 335          | 0.31         | Good         | J            | SI2          | 1080.6451612 | -2.537286441
+38320        | 1019         | 0.57         | Ideal        | G            | I1           | 1787.7192982 | -2.487472394
+39279        | 490          | 0.43         | Good         | J            | SI2          | 1139.5348837 | -2.479478207
+31963        | 452          | 0.43         | Premium      | H            | I1           | 1051.1627906 | -2.440256484
+27939        | 430          | 0.31         | Very Good    | J            | SI2          | 1387.0967741 | -2.267436464
+23019        | 630          | 0.4          | Ideal        | F            | I1           | 1574.9999999 | -2.202630072
+16           | 345          | 0.32         | Premium      | E            | I1           | 1078.1249999 | -2.165936826
+22688        | 629          | 0.43         | Good         | J            | SI2          | 1462.7906976 | -2.162158865
+28286        | 366          | 0.33         | Ideal        | J            | SI2          | 1109.0909090 | -2.147569033
+
+------------------------------------------------------------------------------------------------------------------------
+                                       Resumen por Rangos de Carat (fe_carat_bin)                                       
+------------------------------------------------------------------------------------------------------------------------
+              price                        fe_price_per_carat                           fe_quality_score                 
+              count          mean   median              count         mean       median            count      mean median
+fe_carat_bin                                                                                                             
+0.5–1.0       17206   2495.732710   2323.0              17206  3581.287235  3490.384615            17206  4.093421    4.2
+1.0–1.5       12825   6139.890058   5598.0              12825  5524.290155  5026.724138            12825  3.841544    3.9
+1.5–2.0        4081  10897.172507  10609.0               4081  6913.057951  6699.354839             4081  3.655207    3.7
+<0.5          17674    792.403248    765.0              17674  2288.589383  2250.000000            17674  4.459375    4.5
+≥2.0           2154  14843.664810  15277.0               2154  7002.529083  7121.078431             2154  3.184540    3.3
+
+------------------------------------------------------------------------------------------------------------------------
+                                                  Resumen de Ejecución                                                  
+------------------------------------------------------------------------------------------------------------------------
+Tiempo total: 38.94 s
+Figuras generadas: 12
+

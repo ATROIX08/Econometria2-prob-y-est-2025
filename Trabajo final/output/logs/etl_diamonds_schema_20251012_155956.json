@@ -1,0 +1,205 @@
+{
+  "run_ts": "20251012_155956",
+  "input_csv": "C:\\Users\\betoh\\OneDrive\\Escritorio\\Yo\\Economía\\7mo Semestre\\econometria2_estyprob\\codigo-py\\Econometria2-prob-y-est-2025\\Trabajo final\\data\\diamonds.csv",
+  "output_parquet_full": "C:\\Users\\betoh\\OneDrive\\Escritorio\\Yo\\Economía\\7mo Semestre\\econometria2_estyprob\\codigo-py\\Econometria2-prob-y-est-2025\\Trabajo final\\output\\parquets\\diamonds_features_20251012_155956.parquet",
+  "n_rows_full": 53940,
+  "n_cols_full": 38,
+  "columns_full": [
+    {
+      "name": "index",
+      "dtype": "Int64"
+    },
+    {
+      "name": "carat",
+      "dtype": "Float64"
+    },
+    {
+      "name": "cut",
+      "dtype": "String"
+    },
+    {
+      "name": "color",
+      "dtype": "String"
+    },
+    {
+      "name": "clarity",
+      "dtype": "String"
+    },
+    {
+      "name": "depth",
+      "dtype": "Float64"
+    },
+    {
+      "name": "table",
+      "dtype": "Float64"
+    },
+    {
+      "name": "price",
+      "dtype": "Int64"
+    },
+    {
+      "name": "x",
+      "dtype": "Float64"
+    },
+    {
+      "name": "y",
+      "dtype": "Float64"
+    },
+    {
+      "name": "z",
+      "dtype": "Float64"
+    },
+    {
+      "name": "fe_cut_ord",
+      "dtype": "Int64"
+    },
+    {
+      "name": "fe_color_ord",
+      "dtype": "Int64"
+    },
+    {
+      "name": "fe_clarity_ord",
+      "dtype": "Int64"
+    },
+    {
+      "name": "fe_volume_mm3",
+      "dtype": "Float64"
+    },
+    {
+      "name": "fe_area_mm2",
+      "dtype": "Float64"
+    },
+    {
+      "name": "fe_spread_mm",
+      "dtype": "Float64"
+    },
+    {
+      "name": "fe_aspect_ratio",
+      "dtype": "Float64"
+    },
+    {
+      "name": "fe_invalid_dims",
+      "dtype": "Boolean"
+    },
+    {
+      "name": "fe_symmetry_dev_pct",
+      "dtype": "Float64"
+    },
+    {
+      "name": "fe_depth_pct_recalc",
+      "dtype": "Float64"
+    },
+    {
+      "name": "fe_depth_pct_diff",
+      "dtype": "Float64"
+    },
+    {
+      "name": "fe_depth_pct_is_consistent",
+      "dtype": "Boolean"
+    },
+    {
+      "name": "fe_z_to_spread_ratio",
+      "dtype": "Float64"
+    },
+    {
+      "name": "fe_price_per_carat",
+      "dtype": "Float64"
+    },
+    {
+      "name": "fe_log_price",
+      "dtype": "Float64"
+    },
+    {
+      "name": "fe_log_carat",
+      "dtype": "Float64"
+    },
+    {
+      "name": "fe_log_price_per_carat",
+      "dtype": "Float64"
+    },
+    {
+      "name": "fe_depth_dev",
+      "dtype": "Float64"
+    },
+    {
+      "name": "fe_table_dev",
+      "dtype": "Float64"
+    },
+    {
+      "name": "fe_table_to_depth_ratio",
+      "dtype": "Float64"
+    },
+    {
+      "name": "fe_spread_per_carat",
+      "dtype": "Float64"
+    },
+    {
+      "name": "fe_area_per_carat",
+      "dtype": "Float64"
+    },
+    {
+      "name": "fe_quality_score",
+      "dtype": "Float64"
+    },
+    {
+      "name": "fe_carat_bin",
+      "dtype": "String"
+    },
+    {
+      "name": "fe_carat_x_quality",
+      "dtype": "Float64"
+    },
+    {
+      "name": "fe_ppc_z_by_cqc",
+      "dtype": "Float64"
+    },
+    {
+      "name": "fe_is_square",
+      "dtype": "Boolean"
+    }
+  ],
+  "quality_checks": {
+    "duplicated_rows": 0,
+    "nulls_by_col": {
+      "index": 0,
+      "carat": 0,
+      "cut": 0,
+      "color": 0,
+      "clarity": 0,
+      "depth": 0,
+      "table": 0,
+      "price": 0,
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "total_nulls": 0,
+    "nunique_by_col": {
+      "index": 53940,
+      "carat": 273,
+      "cut": 5,
+      "color": 7,
+      "clarity": 8,
+      "depth": 184,
+      "table": 127,
+      "price": 11602,
+      "x": 554,
+      "y": 552,
+      "z": 375
+    },
+    "domain_violations": {
+      "cut_invalid_values": [],
+      "color_invalid_values": [],
+      "clarity_invalid_values": []
+    },
+    "range_flags": {
+      "price_out_of_range": 0,
+      "carat_out_of_range": 0,
+      "x_nonpositive": 8,
+      "y_nonpositive": 7,
+      "z_nonpositive": 20,
+      "depth_suspect": 0,
+      "table_suspect": 0
+    }
+  }
+}

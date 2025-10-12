@@ -1,0 +1,16 @@
+[2025-10-12T16:32:48.113988] EDA finalizado.
+Input: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\output\parquets\diamonds_features_20251012_155956.parquet
+Reporte: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\output\logs\eda_diamonds_reporte_20251012_163209.txt
+Figuras individuales:
+ - C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\plots\diamonds_eda_20251012_163209_per_column_distribution.png
+ - C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\plots\diamonds_eda_20251012_163209_correlation_matrix.png
+ - C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\plots\diamonds_eda_20251012_163209_scatter_matrix.png
+ - C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\plots\diamonds_eda_20251012_163209_3d_xyz.png
+ - C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\plots\diamonds_eda_20251012_163209_price_vs_carat.png
+ - C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\plots\diamonds_eda_20251012_163209_ppc_vs_carat.png
+ - C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\plots\diamonds_eda_20251012_163209_ppc_by_cut.png
+ - C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\plots\diamonds_eda_20251012_163209_ppc_by_color.png
+ - C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\plots\diamonds_eda_20251012_163209_ppc_by_clarity.png
+ - C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\plots\diamonds_eda_20251012_163209_ppc_by_fe_carat_bin.png
+ - C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\plots\diamonds_eda_20251012_163209_missing_values.png
+ - C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\plots\diamonds_eda_20251012_163209_outlier_rates.png
