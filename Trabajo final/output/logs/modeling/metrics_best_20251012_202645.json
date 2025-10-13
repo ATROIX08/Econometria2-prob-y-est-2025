@@ -1,0 +1,49 @@
+{
+  "timestamp": "20251012_202645",
+  "parquet": "C:\\Users\\betoh\\OneDrive\\Escritorio\\Yo\\Economía\\7mo Semestre\\econometria2_estyprob\\codigo-py\\Econometria2-prob-y-est-2025\\Trabajo final\\output\\parquets\\diamonds_features_20251012_155956.parquet",
+  "model": "HistGradientBoostingRegressor",
+  "best_params": {
+    "early_stopping": true,
+    "l2_regularization": 0.1,
+    "learning_rate": 0.1,
+    "max_bins": 255,
+    "max_depth": 10,
+    "max_leaf_nodes": 63,
+    "min_samples_leaf": 20,
+    "random_state": 42
+  },
+  "test_metrics": {
+    "mse": 290437.03499213664,
+    "rmse": 538.9221047536802,
+    "mae": 278.18998667874706,
+    "r2": 0.9818456863445362,
+    "mape_pct": 8.031868150652762,
+    "corr": 0.9908858082275078
+  },
+  "n_train": 43136,
+  "n_test": 10784,
+  "features_numeric": [
+    "carat",
+    "fe_log_carat",
+    "fe_cut_ord",
+    "fe_color_ord",
+    "fe_clarity_ord",
+    "fe_quality_score",
+    "fe_carat_x_quality",
+    "depth",
+    "table",
+    "fe_depth_pct_is_consistent",
+    "fe_invalid_dims",
+    "fe_symmetry_dev_pct",
+    "fe_z_to_spread_ratio",
+    "fe_spread_per_carat",
+    "fe_area_per_carat",
+    "fe_is_square"
+  ],
+  "features_categorical": [
+    "cut",
+    "color",
+    "clarity",
+    "fe_carat_bin"
+  ]
+}

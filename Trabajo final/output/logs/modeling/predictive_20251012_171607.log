@@ -1,0 +1,63 @@
+2025-10-12 17:16:07 | INFO     | predictive | ==========================================
+2025-10-12 17:16:07 | INFO     | predictive |    Inicio de ejecución: predictive.py     
+2025-10-12 17:16:07 | INFO     | predictive | ==========================================
+2025-10-12 17:16:07 | INFO     | predictive | Logs detallados en: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\output\logs\modeling\predictive_20251012_171607.log
+2025-10-12 17:16:07 | INFO     | predictive | Parámetros de ejecución:
+2025-10-12 17:16:07 | INFO     | predictive |   Parquet  : C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\output\parquets\diamonds_features_20251012_155956.parquet
+2025-10-12 17:16:07 | INFO     | predictive |   Plots dir: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\plots\modeling
+2025-10-12 17:16:07 | INFO     | predictive |   Logs dir : C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\output\logs\modeling
+2025-10-12 17:16:07 | INFO     | predictive |   test_size: 0.2
+2025-10-12 17:16:07 | INFO     | predictive |   cv_splits: 5
+2025-10-12 17:16:07 | INFO     | predictive |   seed     : 42
+2025-10-12 17:16:07 | INFO     | predictive |   top_k_imp: 20
+2025-10-12 17:16:08 | INFO     | predictive | Dask cluster inicializado con 6 workers (threads_per_worker=1).
+2025-10-12 17:16:08 | INFO     | predictive | Dashboard: http://192.168.1.181:8787/status
+2025-10-12 17:16:08 | INFO     | predictive | Leyendo Parquet desde: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\output\parquets\diamonds_features_20251012_155956.parquet
+2025-10-12 17:16:08 | INFO     | predictive | Parquet leído: 53,940 filas x 38 columnas.
+2025-10-12 17:16:08 | INFO     | predictive | Filas eliminadas por 'fe_invalid_dims'==True: 20
+2025-10-12 17:16:08 | INFO     | predictive | Columnas excluidas por leakage (contienen 'price'/'ppc'): ['fe_log_price', 'fe_log_price_per_carat', 'fe_ppc_z_by_cqc', 'fe_price_per_carat']
+2025-10-12 17:16:08 | INFO     | predictive | Columnas redundantes (tamaño) eliminadas: ['x', 'y', 'z', 'fe_volume_mm3', 'fe_area_mm2', 'fe_spread_mm', 'fe_aspect_ratio', 'fe_depth_pct_recalc', 'fe_depth_pct_diff', 'fe_table_to_depth_ratio', 'fe_depth_dev', 'fe_table_dev']
+2025-10-12 17:16:08 | INFO     | predictive | Total columnas seleccionadas para X: 20
+2025-10-12 17:16:08 | INFO     | predictive | Numéricas (16): ['carat', 'fe_log_carat', 'fe_cut_ord', 'fe_color_ord', 'fe_clarity_ord', 'fe_quality_score', 'fe_carat_x_quality', 'depth', 'table', 'fe_depth_pct_is_consistent', 'fe_invalid_dims', 'fe_symmetry_dev_pct', 'fe_z_to_spread_ratio', 'fe_spread_per_carat', 'fe_area_per_carat', 'fe_is_square']
+2025-10-12 17:16:08 | INFO     | predictive | Categóricas (4): ['cut', 'color', 'clarity', 'fe_carat_bin']
+2025-10-12 17:16:08 | INFO     | predictive | Split realizado. Train: 43,136 filas; Test: 10,784 filas.
+2025-10-12 17:16:08 | INFO     | predictive | Iniciando GridSearchCV (dask-ml) sobre el cluster Dask...
+2025-10-12 19:16:42 | INFO     | predictive | GridSearchCV finalizado en 7,234.6 segundos.
+2025-10-12 19:16:42 | INFO     | predictive | ==========================================
+2025-10-12 19:16:42 | INFO     | predictive |       MEJOR MODELO (GridSearchCV)        
+2025-10-12 19:16:42 | INFO     | predictive | ==========================================
+2025-10-12 19:16:42 | INFO     | predictive | Mejor RMSE (CV): 537.7307
+2025-10-12 19:16:42 | INFO     | predictive | Mejores hiperparámetros: {
+  "regressor__early_stopping": true,
+  "regressor__l2_regularization": 0.1,
+  "regressor__learning_rate": 0.1,
+  "regressor__max_bins": 255,
+  "regressor__max_depth": 10,
+  "regressor__max_leaf_nodes": 63,
+  "regressor__min_samples_leaf": 20
+}
+2025-10-12 19:16:42 | INFO     | predictive | Top-5 combinaciones (por RMSE CV):
+2025-10-12 19:16:42 | INFO     | predictive |   #1: RMSE=537.7307 ± 19.0202 | params={'regressor__early_stopping': True, 'regressor__l2_regularization': 0.1, 'regressor__learning_rate': 0.1, 'regressor__max_bins': 255, 'regressor__max_depth': 10, 'regressor__max_leaf_nodes': 63, 'regressor__min_samples_leaf': 20}
+2025-10-12 19:16:42 | INFO     | predictive |   #2: RMSE=537.8046 ± 19.4709 | params={'regressor__early_stopping': True, 'regressor__l2_regularization': 1.0, 'regressor__learning_rate': 0.1, 'regressor__max_bins': 255, 'regressor__max_depth': 10, 'regressor__max_leaf_nodes': 63, 'regressor__min_samples_leaf': 20}
+2025-10-12 19:16:42 | INFO     | predictive |   #3: RMSE=538.8978 ± 17.5862 | params={'regressor__early_stopping': True, 'regressor__l2_regularization': 0.1, 'regressor__learning_rate': 0.1, 'regressor__max_bins': 255, 'regressor__max_depth': None, 'regressor__max_leaf_nodes': 63, 'regressor__min_samples_leaf': 20}
+2025-10-12 19:16:42 | INFO     | predictive |   #4: RMSE=538.9578 ± 16.7269 | params={'regressor__early_stopping': True, 'regressor__l2_regularization': 0.1, 'regressor__learning_rate': 0.1, 'regressor__max_bins': 255, 'regressor__max_depth': 16, 'regressor__max_leaf_nodes': 63, 'regressor__min_samples_leaf': 20}
+2025-10-12 19:16:42 | INFO     | predictive |   #5: RMSE=539.0934 ± 18.8846 | params={'regressor__early_stopping': True, 'regressor__l2_regularization': 0.0, 'regressor__learning_rate': 0.1, 'regressor__max_bins': 255, 'regressor__max_depth': None, 'regressor__max_leaf_nodes': 63, 'regressor__min_samples_leaf': 20}
+2025-10-12 19:16:42 | INFO     | predictive | ==========================================
+2025-10-12 19:16:42 | INFO     | predictive |         MÉTRICAS EN CONJUNTO TEST         
+2025-10-12 19:16:42 | INFO     | predictive | ==========================================
+2025-10-12 19:16:42 | INFO     | predictive | MSE  : 290,437.0350
+2025-10-12 19:16:42 | INFO     | predictive | RMSE : 538.9221
+2025-10-12 19:16:42 | INFO     | predictive | MAE  : 278.1900
+2025-10-12 19:16:42 | INFO     | predictive | R^2  : 0.981846
+2025-10-12 19:16:42 | INFO     | predictive | MAPE : 8.032%
+2025-10-12 19:16:42 | INFO     | predictive | Métricas guardadas en JSON: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\output\logs\modeling\metrics_20251012_191642.json
+2025-10-12 19:16:44 | INFO     | predictive | Gráficos generados:
+2025-10-12 19:16:44 | INFO     | predictive |   - Observado vs Predicho: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\plots\modeling\observado_vs_predicho_20251012_191643.png
+2025-10-12 19:16:44 | INFO     | predictive |   - Histograma residuales: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\plots\modeling\residuales_hist_20251012_191643.png
+2025-10-12 19:16:44 | INFO     | predictive |   - Residuales vs Predicho: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\plots\modeling\residuales_vs_predicho_20251012_191643.png
+2025-10-12 19:17:00 | INFO     | predictive | Permutation importance guardado en: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\plots\modeling\permutation_importance_top20_20251012_191659.png
+2025-10-12 19:17:00 | INFO     | predictive | Resumen TXT guardado en: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\output\logs\modeling\model_summary_20251012_191700.txt
+2025-10-12 19:17:00 | INFO     | predictive | Cliente Dask cerrado correctamente.
+2025-10-12 19:17:00 | INFO     | predictive | ==========================================
+2025-10-12 19:17:00 | INFO     | predictive |     Ejecución finalizada sin errores.     
+2025-10-12 19:17:00 | INFO     | predictive | ==========================================

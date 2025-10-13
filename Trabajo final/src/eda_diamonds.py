@@ -302,13 +302,13 @@ def plot_3d_xyz(df: pd.DataFrame, plots_dir: Path, prefix: str):
     ax = fig.add_subplot(111, projection='3d')
     if extra_label is not None and not pd.api.types.is_numeric_dtype(extra_label):
         codes = pd.Categorical(extra_label).codes
-        ax.scatter(data["x"], data["y"], data["z"], c=codes, s=2)  # puntos pequeños
+        ax.scatter(data["x"], data["y"], data["z"], c=codes, s=2)  
         categories = pd.Categorical(extra_label).categories
         handles = [plt.Line2D([0], [0], marker='o', linestyle='', markersize=4) for _ in categories]
         ax.legend(handles, [str(c) for c in categories], title="cut", loc="best")
     else:
         c = extra_label if extra_label is not None else data["z"]
-        sc = ax.scatter(data["x"], data["y"], data["z"], c=c, s=2)  # puntos pequeños
+        sc = ax.scatter(data["x"], data["y"], data["z"], c=c, s=2)  
         fig.colorbar(sc, ax=ax, shrink=0.6, pad=0.1)
 
     ax.set_xlabel("x (mm)")
@@ -330,7 +330,7 @@ def plot_basic_relationships(df: pd.DataFrame, plots_dir: Path, prefix: str):
     dsmall = df[["price", "carat"]].dropna()
     fig = plt.figure(figsize=(8, 6))
     ax = fig.add_subplot(111)
-    ax.scatter(dsmall["carat"], dsmall["price"], s=3, alpha=0.5)  # puntos pequeños
+    ax.scatter(dsmall["carat"], dsmall["price"], s=3, alpha=0.5)  
     ax.set_xlabel("carat")
     ax.set_ylabel("price")
     ax.set_title("Precio vs. Carat")
@@ -343,7 +343,7 @@ def plot_basic_relationships(df: pd.DataFrame, plots_dir: Path, prefix: str):
         dppc = df[["fe_price_per_carat", "carat"]].dropna()
         fig = plt.figure(figsize=(8, 6))
         ax = fig.add_subplot(111)
-        ax.scatter(dppc["carat"], dppc["fe_price_per_carat"], s=3, alpha=0.5)  # puntos pequeños
+        ax.scatter(dppc["carat"], dppc["fe_price_per_carat"], s=3, alpha=0.5)  
         ax.set_xlabel("carat")
         ax.set_ylabel("price per carat")
         ax.set_title("Precio por quilate vs. Carat")

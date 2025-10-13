@@ -1,0 +1,41 @@
+2025-10-12 20:26:44 | INFO     | train_best | =========================================
+2025-10-12 20:26:44 | INFO     | train_best |    Inicio de ejecución: train_best.py   
+2025-10-12 20:26:44 | INFO     | train_best | =========================================
+2025-10-12 20:26:44 | INFO     | train_best | Logs detallados en: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\output\logs\modeling\train_best_20251012_202644.log
+2025-10-12 20:26:44 | INFO     | train_best | Parquet: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\output\parquets\diamonds_features_20251012_155956.parquet
+2025-10-12 20:26:44 | INFO     | train_best | Plots  : C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\plots\modeling
+2025-10-12 20:26:44 | INFO     | train_best | Logs   : C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\output\logs\modeling
+2025-10-12 20:26:44 | INFO     | train_best | Model  : C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\output\model
+2025-10-12 20:26:44 | INFO     | train_best | test_size=0.2 | seed=42 | top_k_imp=20
+2025-10-12 20:26:44 | INFO     | train_best | Leyendo Parquet...
+2025-10-12 20:26:44 | INFO     | train_best | Parquet leído: 53.940 filas x 38 columnas.
+2025-10-12 20:26:44 | INFO     | train_best | Filas eliminadas por 'fe_invalid_dims'==True: 20
+2025-10-12 20:26:44 | INFO     | train_best | Columnas excluidas por leakage (contienen 'price'/'ppc'): ['fe_price_per_carat', 'fe_log_price', 'fe_log_price_per_carat', 'fe_ppc_z_by_cqc']
+2025-10-12 20:26:44 | INFO     | train_best | Columnas redundantes (tamaño) eliminadas: ['x', 'y', 'z', 'fe_volume_mm3', 'fe_area_mm2', 'fe_spread_mm', 'fe_aspect_ratio', 'fe_depth_pct_recalc', 'fe_depth_pct_diff', 'fe_table_to_depth_ratio', 'fe_depth_dev', 'fe_table_dev']
+2025-10-12 20:26:44 | INFO     | train_best | Total columnas seleccionadas para X: 20
+2025-10-12 20:26:44 | INFO     | train_best | Numéricas (16): ['carat', 'fe_log_carat', 'fe_cut_ord', 'fe_color_ord', 'fe_clarity_ord', 'fe_quality_score', 'fe_carat_x_quality', 'depth', 'table', 'fe_depth_pct_is_consistent', 'fe_invalid_dims', 'fe_symmetry_dev_pct', 'fe_z_to_spread_ratio', 'fe_spread_per_carat', 'fe_area_per_carat', 'fe_is_square']
+2025-10-12 20:26:44 | INFO     | train_best | Categóricas (4): ['cut', 'color', 'clarity', 'fe_carat_bin']
+2025-10-12 20:26:44 | INFO     | train_best | Split realizado. Train: 43.136 filas; Test: 10.784 filas.
+2025-10-12 20:26:44 | INFO     | train_best | Entrenando HistGradientBoostingRegressor con hiperparámetros óptimos...
+2025-10-12 20:26:45 | INFO     | train_best | Entrenamiento finalizado.
+2025-10-12 20:26:45 | INFO     | train_best | =========================================
+2025-10-12 20:26:45 | INFO     | train_best |         MÉTRICAS EN CONJUNTO TEST        
+2025-10-12 20:26:45 | INFO     | train_best | =========================================
+2025-10-12 20:26:45 | INFO     | train_best | MSE  : 290.437,0350
+2025-10-12 20:26:45 | INFO     | train_best | RMSE : 538,9221
+2025-10-12 20:26:45 | INFO     | train_best | MAE  : 278,1900
+2025-10-12 20:26:45 | INFO     | train_best | R^2  : 0.981846
+2025-10-12 20:26:45 | INFO     | train_best | MAPE : 8.032%
+2025-10-12 20:26:45 | INFO     | train_best | Corr : 0.990886
+2025-10-12 20:26:45 | INFO     | train_best | Métricas guardadas en JSON: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\output\logs\modeling\metrics_best_20251012_202645.json
+2025-10-12 20:26:46 | INFO     | train_best | Gráficos generados:
+2025-10-12 20:26:46 | INFO     | train_best |   - Observado vs Predicho: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\plots\modeling\observado_vs_predicho_best_20251012_202645.png
+2025-10-12 20:26:46 | INFO     | train_best |   - Histograma residuales: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\plots\modeling\residuales_hist_best_20251012_202645.png
+2025-10-12 20:26:46 | INFO     | train_best |   - Residuales vs Predicho: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\plots\modeling\residuales_vs_predicho_best_20251012_202645.png
+2025-10-12 20:26:46 | INFO     | train_best | Calculando permutation importance (esto puede tardar un poco)...
+2025-10-12 20:26:56 | INFO     | train_best | Permutation importance guardado en: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\plots\modeling\permutation_importance_best_top20_20251012_202645.png
+2025-10-12 20:26:56 | INFO     | train_best | Pipeline entrenado guardado en: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\output\model\best_hgbr_pipeline_20251012_202645.joblib
+2025-10-12 20:26:56 | INFO     | train_best | Resumen TXT guardado en: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\output\logs\modeling\model_best_summary_20251012_202645.txt
+2025-10-12 20:26:56 | INFO     | train_best | =========================================
+2025-10-12 20:26:56 | INFO     | train_best |    Ejecución finalizada sin errores.     
+2025-10-12 20:26:56 | INFO     | train_best | =========================================
