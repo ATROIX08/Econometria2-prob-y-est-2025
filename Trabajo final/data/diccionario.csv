@@ -1,0 +1,11 @@
+Variable,Tipo,Descripción
+price,Numérica,"Precio en dólares ($326–$18,823)."
+carat,Numérica,Peso del diamante (0.2–5.01).
+cut,Categórica,"Calidad del corte (Fair, Good, Very Good, Premium, Ideal)."
+color,Categórica,"Color, de J (peor) a D (mejor)."
+clarity,Categórica,"Claridad (I1 (peor), SI2, SI1, VS2, VS1, VVS2, VVS1, IF (mejor))."
+x,Numérica,Longitud en mm.
+y,Numérica,Ancho en mm.
+z,Numérica,Profundidad en mm.
+depth,Numérica,Porcentaje de profundidad total.
+table,Numérica,Ancho de la parte superior del diamante.
