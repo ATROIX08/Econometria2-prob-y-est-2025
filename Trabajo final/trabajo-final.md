@@ -62,8 +62,8 @@ A pesar del éxito de los modelos, es crucial reconocer sus limitaciones y los r
 ## 8. Navegación del Reporte
 Para un análisis detallado de cada una de las fases del proyecto, se puede consultar la documentación específica a través de los siguientes enlaces:
 
--   [ETL — Preparador de Datos](docs/sub-paginas/etl_diamonds.md)  
--   [EDA — Explorador Detective](docs/sub-paginas/eda_diamonds.md)  
+-   [ETL — Preparador de Datos](docs/sub-paginas/etl-diamonds.md)  
+-   [EDA — Explorador Detective](docs/sub-paginas/eda-diamonds.md)  
 -   [Modelo Explicativo (OLS)](docs/sub-paginas/explicative.md)  
 -   [Modelo Predictivo (Búsqueda)](docs/sub-paginas/predictive.md)  
 -   [Entrenamiento Final (best)](docs/sub-paginas/train_best.md)
