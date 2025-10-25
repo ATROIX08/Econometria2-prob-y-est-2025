@@ -43,7 +43,17 @@ La interpretación de los coeficientes en este modelo permite cuantificar efecto
 
 La ecuación estimada a partir de los resultados de OLS es la siguiente:
 
-$ \widehat{\text{log(price)}} = 8.4508 + 1.8843 \cdot \text{fe\_log\_carat} - 0.0012 \cdot \text{fe\_depth\_dev} - 0.1558 \cdot \text{I(cut=Fair)} + \dots + 0.1607 \cdot \text{I(color=D)} + \dots - 0.5939 \cdot \text{I(clarity=I1)} + \dots $
+$$
+\widehat{\log(\text{price})}
+= 8.4508
++ 1.8843\, \text{fe\_log\_carat}
+- 0.0012\, \text{fe\_depth\_dev}
+- 0.1558\, \mathrm{I}(\text{cut}=\text{Fair})
++ 0.1607\, \mathrm{I}(\text{color}=\text{D})
+- 0.5939\, \mathrm{I}(\text{clarity}=\text{I1})
++ \dots
+$$
+
 
 Donde `I(...)` representa las variables indicadoras (dummy) que toman el valor de 1 si la condición es verdadera y 0 en caso contrario.
 
