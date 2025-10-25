@@ -1,0 +1,91 @@
+2025-10-24 19:59:08 | INFO | ============================================================================================================
+2025-10-24 19:59:08 | INFO | INICIO — MODELO EXPLICATIVO (Diamantes) — versión simple (solo OLS clásico)
+2025-10-24 19:59:08 | INFO | ============================================================================================================
+2025-10-24 19:59:08 | INFO | RUN_TS: 20251024_195908
+2025-10-24 19:59:08 | INFO | Python: 3.12.7, pandas: 2.3.1, numpy: 1.26.4, statsmodels: 0.14.2
+2025-10-24 19:59:08 | INFO | OS: nt
+2025-10-24 19:59:08 | INFO | Proyecto: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final
+2025-10-24 19:59:08 | INFO | Parquets: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\output\parquets
+2025-10-24 19:59:08 | INFO | Plots:    C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\plots\modeling\explicativo
+2025-10-24 19:59:08 | INFO | Logs:     C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\output\logs\modeling\explicativo
+2025-10-24 19:59:08 | INFO | --------------------------------------------------------------------------------------------------------------
+2025-10-24 19:59:08 | INFO | Buscando parquet más reciente...
+2025-10-24 19:59:08 | INFO | Dataset: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\output\parquets\diamonds_features_20251012_155956.parquet
+2025-10-24 19:59:08 | INFO | Leyendo parquet (pyarrow)...
+2025-10-24 19:59:08 | INFO | Leído | shape=(53940, 38)
+2025-10-24 19:59:08 | INFO | Registros inválidos removidos (dims no positivas): 20 | shape=(53920, 38)
+2025-10-24 19:59:08 | INFO | Filas tras dropna en columnas del modelo: 53,920
+2025-10-24 19:59:08 | INFO | Fórmula usada (simple, sin interacciones):
+2025-10-24 19:59:08 | INFO | fe_log_price ~ fe_log_carat + fe_depth_dev + fe_table_dev + C(cut, Treatment(reference='Ideal')) + C(color, Treatment(reference='G')) + C(clarity, Treatment(reference='SI1'))
+2025-10-24 19:59:08 | INFO | Split train/test: train=43,136 | test=10,784
+2025-10-24 19:59:08 | INFO | Ajustando OLS (clásico)...
+2025-10-24 19:59:09 | INFO | [OLS] R² train=0.982550 | R² test=0.982888
+2025-10-24 19:59:09 | INFO | [OLS] AIC=-50857.934 | BIC=-50675.820
+2025-10-24 19:59:09 | INFO | [OLS] Métricas TEST (escala precio): MAE=397.24 | RMSE=783.76 | MAPE=10.43%
+2025-10-24 19:59:10 | INFO | [OLS] Jarque–Bera: stat=17037.4782, p=0, skew=0.2542, kurt=6.0366
+2025-10-24 19:59:10 | INFO | [OLS] Breusch–Pagan: stat=1084.3205, p=3.958e-217 | White: stat=4857.3355, p=0
+2025-10-24 19:59:11 | INFO | TOP 10 influyentes (Cook’s D) [pos=posición en train, idx=índice original]:
+2025-10-24 19:59:11 | INFO | 
+     pos    idx   cooks_d  leverage  std_resid
+0  10230  49773  0.033792  0.003376  14.472620
+1  35572  46476  0.011477  0.002062  10.801583
+2  10384  38153  0.011213  0.002380   9.935409
+3  36910  52861  0.009036  0.008249   4.776327
+4   2848  52860  0.009036  0.008249   4.776327
+5  35001  41918  0.006406  0.004837  -5.261061
+6  29565  45865  0.004132  0.001328   8.077083
+7  38624   8203  0.003602  0.001544   6.993934
+8  34681  22428  0.003469  0.002102  -5.881238
+9    387  21862  0.003352  0.002105  -5.777230
+2025-10-24 19:59:11 | INFO | Figura guardada: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\plots\modeling\explicativo\ols_resid_vs_fitted_20251024_195908.png
+2025-10-24 19:59:12 | INFO | Figura guardada: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\plots\modeling\explicativo\ols_qqplot_20251024_195908.png
+2025-10-24 19:59:12 | INFO | Figura guardada: C:\Users\betoh\OneDrive\Escritorio\Yo\Economía\7mo Semestre\econometria2_estyprob\codigo-py\Econometria2-prob-y-est-2025\Trabajo final\plots\modeling\explicativo\pred_vs_real_test_ols_20251024_195908.png
+2025-10-24 19:59:12 | INFO | Resumen OLS (clásico):
+2025-10-24 19:59:12 | INFO | 
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:           fe_log_price   R-squared:                       0.983
+Model:                            OLS   Adj. R-squared:                  0.983
+Method:                 Least Squares   F-statistic:                 1.214e+05
+Date:                Fri, 24 Oct 2025   Prob (F-statistic):               0.00
+Time:                        19:59:12   Log-Likelihood:                 25450.
+No. Observations:               43136   AIC:                        -5.086e+04
+Df Residuals:                   43115   BIC:                        -5.068e+04
+Df Model:                          20                                         
+Covariance Type:            nonrobust                                         
+=====================================================================================================================
+                                                        coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------------------------
+Intercept                                             8.4508      0.002   3896.737      0.000       8.447       8.455
+C(cut, Treatment(reference='Ideal'))[T.Fair]         -0.1558      0.004    -35.073      0.000      -0.165      -0.147
+C(cut, Treatment(reference='Ideal'))[T.Good]         -0.0799      0.003    -29.838      0.000      -0.085      -0.075
+C(cut, Treatment(reference='Ideal'))[T.Premium]      -0.0222      0.002    -11.428      0.000      -0.026      -0.018
+C(cut, Treatment(reference='Ideal'))[T.Very Good]    -0.0424      0.002    -22.450      0.000      -0.046      -0.039
+C(color, Treatment(reference='G'))[T.D]               0.1607      0.002     68.400      0.000       0.156       0.165
+C(color, Treatment(reference='G'))[T.E]               0.1065      0.002     50.500      0.000       0.102       0.111
+C(color, Treatment(reference='G'))[T.F]               0.0664      0.002     31.692      0.000       0.062       0.070
+C(color, Treatment(reference='G'))[T.H]              -0.0905      0.002    -41.276      0.000      -0.095      -0.086
+C(color, Treatment(reference='G'))[T.I]              -0.2128      0.002    -85.179      0.000      -0.218      -0.208
+C(color, Treatment(reference='G'))[T.J]              -0.3494      0.003   -108.645      0.000      -0.356      -0.343
+C(clarity, Treatment(reference='SI1'))[T.I1]         -0.5939      0.006   -102.152      0.000      -0.605      -0.583
+C(clarity, Treatment(reference='SI1'))[T.IF]          0.5203      0.004    133.188      0.000       0.513       0.528
+C(clarity, Treatment(reference='SI1'))[T.SI2]        -0.1655      0.002    -80.110      0.000      -0.170      -0.161
+C(clarity, Treatment(reference='SI1'))[T.VS1]         0.2190      0.002    101.868      0.000       0.215       0.223
+C(clarity, Treatment(reference='SI1'))[T.VS2]         0.1488      0.002     78.362      0.000       0.145       0.153
+C(clarity, Treatment(reference='SI1'))[T.VVS1]        0.4259      0.003    146.104      0.000       0.420       0.432
+C(clarity, Treatment(reference='SI1'))[T.VVS2]        0.3545      0.003    139.119      0.000       0.350       0.360
+fe_log_carat                                          1.8843      0.001   1481.204      0.000       1.882       1.887
+fe_depth_dev                                         -0.0012      0.001     -2.244      0.025      -0.002      -0.000
+fe_table_dev                                         -0.0004      0.000     -1.028      0.304      -0.001       0.000
+==============================================================================
+Omnibus:                     3526.693   Durbin-Watson:                   2.012
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            17037.478
+Skew:                           0.254   Prob(JB):                         0.00
+Kurtosis:                       6.037   Cond. No.                         21.6
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+2025-10-24 19:59:12 | INFO | ============================================================================================================
+2025-10-24 19:59:12 | INFO | FIN — MODELO EXPLICATIVO (simple, OLS clásico)
+2025-10-24 19:59:12 | INFO | ============================================================================================================

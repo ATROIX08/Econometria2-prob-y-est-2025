@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """
+Autor: Humberto Silva Baltazar
 Entrena el mejor modelo (sin GridSearch) con los hiperparámetros óptimos
 obtenidos previamente. Genera logs, métricas, plots (mejorados) y guarda
 el pipeline entrenado (joblib) para inferencia.
@@ -12,8 +13,6 @@ el pipeline entrenado (joblib) para inferencia.
 - Entrena HistGradientBoostingRegressor con hiperparámetros óptimos.
 - Evalúa en test y guarda métricas/plots/resumen.
 - Guarda el pipeline entrenado.
-
-Autor: Tú :)
 """
 
 from __future__ import annotations
