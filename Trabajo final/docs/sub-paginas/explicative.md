@@ -43,18 +43,31 @@ La interpretación de los coeficientes en este modelo permite cuantificar efecto
 
 La ecuación estimada a partir de los resultados de OLS es la siguiente:
 
-$$
-\widehat{\log(\text{price})}
-= 8.4508
-+ 1.8843\, \text{fe\_log\_carat}
-- 0.0012\, \text{fe\_depth\_dev}
-- 0.1558\, \mathrm{I}(\text{cut}=\text{Fair})
-+ 0.1607\, \mathrm{I}(\text{color}=\text{D})
-- 0.5939\, \mathrm{I}(\text{clarity}=\text{I1})
-+ \dots
-$$
-
-
+```math
+\begin{array}{rl}
+\widehat{\log(\text{price})} = & 8.4508 \\
+& - 0.1558\,\mathrm{I}(\text{cut}=\text{Fair}) \\
+& - 0.0799\,\mathrm{I}(\text{cut}=\text{Good}) \\
+& - 0.0222\,\mathrm{I}(\text{cut}=\text{Premium}) \\
+& - 0.0424\,\mathrm{I}(\text{cut}=\text{Very Good}) \\
+& + 0.1607\,\mathrm{I}(\text{color}=\text{D}) \\
+& + 0.1065\,\mathrm{I}(\text{color}=\text{E}) \\
+& + 0.0664\,\mathrm{I}(\text{color}=\text{F}) \\
+& - 0.0905\,\mathrm{I}(\text{color}=\text{H}) \\
+& - 0.2128\,\mathrm{I}(\text{color}=\text{I}) \\
+& - 0.3494\,\mathrm{I}(\text{color}=\text{J}) \\
+& - 0.5939\,\mathrm{I}(\text{clarity}=\text{I1}) \\
+& + 0.5203\,\mathrm{I}(\text{clarity}=\text{IF}) \\
+& - 0.1655\,\mathrm{I}(\text{clarity}=\text{SI2}) \\
+& + 0.2190\,\mathrm{I}(\text{clarity}=\text{VS1}) \\
+& + 0.1488\,\mathrm{I}(\text{clarity}=\text{VS2}) \\
+& + 0.4259\,\mathrm{I}(\text{clarity}=\text{VVS1}) \\
+& + 0.3545\,\mathrm{I}(\text{clarity}=\text{VVS2}) \\
+& + 1.8843\,\text{fe\_log\_carat} \\
+& - 0.0012\,\text{fe\_depth\_dev} \\
+& - 0.0004\,\text{fe\_table\_dev}
+\end{array}
+```
 Donde `I(...)` representa las variables indicadoras (dummy) que toman el valor de 1 si la condición es verdadera y 0 en caso contrario.
 
 ### Interpretación de la Ecuación
