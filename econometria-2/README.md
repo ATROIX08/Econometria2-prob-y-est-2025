@@ -27,6 +27,17 @@ Este script utiliza **XGBoost**, un potente algoritmo de gradient boosting, para
     - Entrenamiento de un modelo de XGBoost.
     - Visualización de los árboles de decisión para interpretar el modelo.
 
+### 3. Naive Bayes para Análisis de Sentimiento (`naive-bayes-sentiment.py`)
+
+Este script didáctico muestra cómo construir un clasificador de análisis de sentimiento (positivo, negativo, neutral) utilizando **Naive Bayes Multinomial** y **TF-IDF**.
+
+- **Objetivo**: Entender el flujo de trabajo de clasificación de texto, desde la vectorización hasta la evaluación del modelo.
+- **Librerías**: `scikit-learn`, `pandas`, `matplotlib`.
+- **Conceptos clave**:
+    - Vectorización de texto con TF-IDF.
+    - Entrenamiento de un clasificador Naive Bayes para texto.
+    - Interpretación del modelo a través de los "top tokens" por clase.
+
 ## Cómo Ejecutar los Scripts
 
 1. Asegúrate de tener instaladas las librerías del `requirements.txt` del repositorio principal.
@@ -41,6 +52,10 @@ Este script utiliza **XGBoost**, un potente algoritmo de gradient boosting, para
    o
    ```bash
    python xgboost-mtcars.py
+   ```
+   o
+   ```bash
+   python naive-bayes-sentiment.py
    ```
 
 ## Visualizaciones Generadas

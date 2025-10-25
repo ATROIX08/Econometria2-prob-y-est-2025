@@ -8,6 +8,7 @@ El proyecto está organizado en las siguientes carpetas, cada una representando 
 
 - **`econometria-2/`**: Contiene scripts relacionados con la materia de Econometría II.
 - **`prob-y-est/`**: Contiene scripts relacionados con la materia de Probabilidad y Estadística.
+- **`Trabajo final/`**: Un proyecto completo que abarca el análisis y modelado predictivo de un conjunto de datos sobre diamantes.
 
 Cada una de estas carpetas tiene la siguiente estructura:
 
